@@ -5,9 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // Update this to match your GitHub repo name (e.g., '/movie-draft-app/' or '/Movie-Draft/')
-  // Leave as '/' if deploying to username.github.io (root domain)
-  base: process.env.GITHUB_PAGES ? (process.env.REPO_NAME || '/Movie-Draft/') : '/',
+  // Base path for GitHub Pages - must match your repo name
+  base: process.env.GITHUB_PAGES ? '/movie-draft/' : '/',
   server: {
     allowedHosts: ['moviedraft.loca.lt', '.loca.lt'],
   },
