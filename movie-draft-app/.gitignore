@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+
+
+node scripts/add-poster.js "Oldboy" "https://media.themoviedb.org/t/p/w600_and_h900_face/pWDtjs568ZfOTMbURQBYuT4Qxka.jpg"
+
+node scripts/add-poster.js "True Stories" "https://media.themoviedb.org/t/p/w600_and_h900_face/sngF8cskFWz2cig7b63ZaDNaQXr.jpg"
+
+
+node scripts/add-poster.js "The Heartbreak Kid" "https://media.themoviedb.org/t/p/w600_and_h900_face/5HtYW6taG3paHleY2LOCi44Qqei.jpg"
+
+node scripts/add-poster.js "Let the Sunshine In" "https://media.themoviedb.org/t/p/w600_and_h900_face/6O5F7dN47KUTB1HXcBvQlaQYYR6.jpg"
+
+node scripts/add-poster.js "Night Moves" "https://media.themoviedb.org/t/p/w600_and_h900_face/j3zMCyvhGlpw31BAWLVMEZNPfOX.jpg"
+
+node scripts/add-poster.js "French Connection" "https://media.themoviedb.org/t/p/w600_and_h900_face/5XSGvIKl2yPvOkieFjc3rzLw7x0.jpg"
+
+node scripts/add-poster.js "Mangrove" "https://media.themoviedb.org/t/p/w600_and_h900_face/hI9SLdaMK3tENQTNYnyCCsIx0Wi.jpg"
+
+node scripts/add-poster.js "Memories of Murder" "https://media.themoviedb.org/t/p/w600_and_h900_face/jcgUjx1QcupGzjntTVlnQ15lHqy.jpg"

@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Google Fonts - Playfair Display (serif display) + Source Sans 3 (body) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+/* ============================================
+   CRITERION COLLECTION THEME
+   Sophisticated, editorial, cinephile-oriented
+   ============================================ */
+
+@theme {
+  /* Colors - Light Mode (Primary) */
+  --color-cream: #F5F3EF;
+  --color-cream-dark: #EBE8E2;
+  --color-white: #FFFFFF;
+  --color-charcoal: #1C1C1C;
+  --color-charcoal-light: #2A2A2A;
+  --color-text-primary: #1C1C1C;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #8B8680;
+  --color-burgundy: #722F37;
+  --color-burgundy-light: #8B3D47;
+  --color-burgundy-dark: #5A252C;
+  --color-gold: #C9A227;
+  --color-gold-light: #D4B23A;
+  --color-forest: #2D5A3D;
+  --color-border: #E5E2DC;
+  --color-border-dark: #D4D0C8;
+  
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Helvetica Neue', sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.16);
+  
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-text-primary);
+}
+
+/* Display font utility */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Sharp corners - no border radius anywhere */
+* {
+  border-radius: 0 !important;
+}
+
+/* Smooth transitions on interactive elements */
+button, a, input {
+  transition: all 200ms ease-out;
+}
+
+/* Custom scrollbar for the editorial feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-burgundy);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-burgundy);
+  color: white;
+}
