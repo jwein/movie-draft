@@ -31,10 +31,18 @@ if (isFirebaseConfigured()) {
   try {
     app = initializeApp(firebaseConfig);
     database = getDatabase(app);
+    console.log('Firebase initialized successfully');
+    console.log('Database URL:', firebaseConfig.databaseURL);
   } catch (error) {
     console.error('Firebase initialization error:', error);
     // App will continue to work in solo mode
   }
+} else {
+  console.warn('Firebase not configured - missing environment variables');
+  console.log('Available env vars:', {
+    hasApiKey: !!import.meta.env.VITE_FIREBASE_API_KEY,
+    hasDatabaseURL: !!import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  });
 }
 
 export { database };
