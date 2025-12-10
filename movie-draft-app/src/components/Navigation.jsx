@@ -1,4 +1,5 @@
 import { VIEWS } from '../data/constants';
+import { useSessionContext } from '../context/SessionContext';
 import ExportButton from './ExportButton';
 
 const NAV_ITEMS = [
@@ -10,6 +11,8 @@ const NAV_ITEMS = [
 ];
 
 export default function Navigation({ currentView, onViewChange, isDraftComplete, draftState }) {
+  const { userRole, isHosting, connectionStatus, sessionId } = useSessionContext();
+  
   return (
     <header className="bg-charcoal border-b border-charcoal-light sticky top-0 z-50">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -20,8 +23,18 @@ export default function Navigation({ currentView, onViewChange, isDraftComplete,
               MOVIE DRAFT
             </h1>
             {isDraftComplete && (
-              <span className="text-xs font-medium bg-forest text-white px-3 py-1 uppercase tracking-wider">
+              <span className="text-xs font-semibold bg-forest text-white px-3 py-1.5 uppercase tracking-wider rounded">
                 Complete
+              </span>
+            )}
+            {userRole === 'commissioner' && (
+              <span className="text-xs font-semibold bg-forest text-white px-3 py-1.5 uppercase tracking-wider rounded">
+                Commissioner
+              </span>
+            )}
+            {userRole === 'viewer' && (
+              <span className="text-xs font-semibold bg-text-muted text-white px-3 py-1.5 uppercase tracking-wider rounded">
+                Viewer
               </span>
             )}
           </div>
@@ -49,6 +62,35 @@ export default function Navigation({ currentView, onViewChange, isDraftComplete,
             </nav>
             
             <div className="border-l border-charcoal-light h-6" />
+            
+            {/* Enhanced Role & Connection Status Section */}
+            {sessionId && (
+              <div className="flex items-center gap-3">
+                {/* Connection Status with Icon */}
+                <div className="flex items-center gap-1.5">
+                  {connectionStatus === 'connected' && (
+                    <span className="text-xs text-forest font-medium flex items-center gap-1">
+                      <span className="w-2 h-2 bg-forest rounded-full animate-pulse"></span>
+                      Connected
+                    </span>
+                  )}
+                  {connectionStatus === 'connecting' && (
+                    <span className="text-xs text-gold font-medium flex items-center gap-1">
+                      <span className="w-2 h-2 bg-gold rounded-full"></span>
+                      Connecting...
+                    </span>
+                  )}
+                  {connectionStatus === 'error' && (
+                    <span className="text-xs text-burgundy font-medium flex items-center gap-1">
+                      <span className="w-2 h-2 bg-burgundy rounded-full"></span>
+                      Connection Error
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+            
+            {sessionId && <div className="border-l border-charcoal-light h-6" />}
             
             <ExportButton draftState={draftState} />
           </div>

@@ -1,4 +1,4 @@
-export default function MovieCard({ movie, isSelected, onClick, size = 'normal', showTitle = true }) {
+export default function MovieCard({ movie, isSelected, onClick, size = 'normal', showTitle = true, disabled = false }) {
   const sizeClasses = {
     small: 'w-full',
     normal: 'w-full',
@@ -19,11 +19,14 @@ export default function MovieCard({ movie, isSelected, onClick, size = 'normal',
 
   return (
     <button
-      onClick={onClick}
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
       className={`relative bg-white border transition-all duration-300 group ${sizeClasses[size]} ${
-        isSelected 
-          ? 'border-burgundy border-2 shadow-md' 
-          : 'border-border hover:border-border-dark hover:shadow-md'
+        disabled
+          ? 'opacity-50 cursor-not-allowed'
+          : isSelected 
+            ? 'border-burgundy border-2 shadow-md' 
+            : 'border-border hover:border-border-dark hover:shadow-md'
       }`}
     >
       {/* Mat/frame effect - cream padding around poster */}

@@ -1,4 +1,7 @@
-import { useReducer, useEffect, useCallback } from 'react';
+import { useReducer, useEffect, useCallback, useRef } from 'react';
+import { ref, set, get, onValue, off } from 'firebase/database';
+import { database, isFirebaseConfigured } from '../config/firebase';
+import { useSessionContext } from '../context/SessionContext';
 import { STORAGE_KEY, DRAFT_CONFIG, DEFAULT_MEMBERS, CATEGORIES } from '../data/constants';
 import moviesData from '../data/movies.json';
 
@@ -168,11 +171,19 @@ function loadState() {
   return createInitialState();
 }
 
-// Save state to localStorage
-function saveState(state) {
+// Save state to localStorage (or Firebase if in session mode)
+function saveState(state, sessionId, userRole, isSessionMode) {
   try {
-    // Don't save movies array to localStorage (it's large and static)
+    // Don't save movies array (it's large and static)
     const { movies, ...stateToSave } = state;
+    
+    // If in session mode as commissioner, Firebase writes are handled by useEffect
+    // Don't write here to avoid duplicate writes
+    if (isSessionMode && userRole === 'commissioner') {
+      return;
+    }
+    
+    // Use localStorage for solo mode or if Firebase not available
     localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
   } catch (e) {
     console.error('Failed to save draft state:', e);
@@ -188,6 +199,7 @@ const ACTIONS = {
   MAKE_PICK: 'MAKE_PICK',
   UNDO_PICK: 'UNDO_PICK',
   RESET_DRAFT: 'RESET_DRAFT',
+  SYNC_FROM_FIREBASE: 'SYNC_FROM_FIREBASE',
 };
 
 // Reducer
@@ -386,6 +398,28 @@ function draftReducer(state, action) {
       return createInitialState();
     }
     
+    case ACTIONS.SYNC_FROM_FIREBASE: {
+      const remoteState = action.payload;
+      // Merge with local movies data (always use local movies)
+      // Ensure all required fields exist (some might be missing from Firebase)
+      return {
+        ...remoteState,
+        movies: moviesData, // Always use local movies data
+        // Ensure arrays exist (might be undefined if session just started)
+        draftOrder: remoteState.draftOrder || [],
+        picksOrder: remoteState.picksOrder || [],
+        availableMovieIds: remoteState.availableMovieIds || moviesData.map(m => m.id),
+        history: remoteState.history || [],
+        // Ensure objects exist
+        picks: remoteState.picks || {},
+        // Ensure members exist
+        members: remoteState.members || DEFAULT_MEMBERS,
+        // Ensure booleans have defaults
+        isSetupComplete: remoteState.isSetupComplete ?? false,
+        isDraftComplete: remoteState.isDraftComplete ?? false,
+      };
+    }
+    
     default:
       return state;
   }
@@ -393,12 +427,179 @@ function draftReducer(state, action) {
 
 // Custom hook
 export function useDraftState() {
+  const { sessionId, userRole, isConnected } = useSessionContext();
+  const isSessionMode = sessionId !== null && isFirebaseConfigured() && database;
+  
+  // Refs to track sync state (prevent infinite loops)
+  const isSyncingFromFirebase = useRef(false);
+  const isWritingToFirebase = useRef(false);
+  const isFirstRender = useRef(true);
+  const hasLoadedInitialState = useRef(false);
+  
   const [state, dispatch] = useReducer(draftReducer, null, loadState);
   
-  // Save to localStorage on every state change
+  // Load initial state from Firebase when joining session
   useEffect(() => {
-    saveState(state);
-  }, [state]);
+    if (!isSessionMode || !isConnected || hasLoadedInitialState.current) {
+      return;
+    }
+    
+    const loadInitialState = async () => {
+      try {
+        const sessionRef = ref(database, `sessions/${sessionId}/draftState`);
+        const snapshot = await get(sessionRef);
+        
+        if (snapshot.exists()) {
+          const remoteState = snapshot.val();
+          // Ensure all required fields exist with defaults
+          const syncedState = {
+            ...remoteState,
+            movies: moviesData, // Always use local movies data
+            draftOrder: remoteState.draftOrder || [],
+            picksOrder: remoteState.picksOrder || [],
+            availableMovieIds: remoteState.availableMovieIds || moviesData.map(m => m.id),
+            history: remoteState.history || [],
+            picks: remoteState.picks || {},
+            members: remoteState.members || DEFAULT_MEMBERS,
+            isSetupComplete: remoteState.isSetupComplete ?? false,
+            isDraftComplete: remoteState.isDraftComplete ?? false,
+          };
+          
+          // For viewers, always use remote state
+          // For commissioner, only use remote if local state is not setup complete
+          // Check state at the time of async execution (state may have changed, but we only load once)
+          const shouldUseRemoteState = userRole === 'viewer' || !state.isSetupComplete;
+          
+          if (shouldUseRemoteState) {
+            isSyncingFromFirebase.current = true;
+            dispatch({ type: ACTIONS.SYNC_FROM_FIREBASE, payload: syncedState });
+            setTimeout(() => {
+              isSyncingFromFirebase.current = false;
+            }, 100);
+          }
+        }
+        
+        hasLoadedInitialState.current = true;
+      } catch (error) {
+        console.error('Error loading initial state from Firebase:', error);
+        hasLoadedInitialState.current = true; // Mark as loaded even on error
+      }
+    };
+    
+    loadInitialState();
+  }, [sessionId, isSessionMode, isConnected, userRole]);
+  
+  // Firebase listener for viewers (read updates)
+  useEffect(() => {
+    if (!isSessionMode || userRole !== 'viewer' || !isConnected) {
+      return;
+    }
+    
+    const sessionRef = ref(database, `sessions/${sessionId}/draftState`);
+    
+    // Listen for remote changes
+    const unsubscribe = onValue(sessionRef, (snapshot) => {
+      if (!snapshot.exists()) {
+        return;
+      }
+      
+      const remoteState = snapshot.val();
+      
+      // Prevent infinite loops - don't update if we're writing
+      if (isWritingToFirebase.current) {
+        return;
+      }
+      
+      // Set flag to prevent local updates from triggering Firebase writes
+      isSyncingFromFirebase.current = true;
+      
+      try {
+        // Merge remote state with local movies data
+        // Ensure all required fields exist with defaults
+        const syncedState = {
+          ...remoteState,
+          movies: moviesData, // Always use local movies data
+          draftOrder: remoteState.draftOrder || [],
+          picksOrder: remoteState.picksOrder || [],
+          availableMovieIds: remoteState.availableMovieIds || moviesData.map(m => m.id),
+          history: remoteState.history || [],
+          picks: remoteState.picks || {},
+          members: remoteState.members || DEFAULT_MEMBERS,
+          isSetupComplete: remoteState.isSetupComplete ?? false,
+          isDraftComplete: remoteState.isDraftComplete ?? false,
+        };
+        
+        // Dispatch action to update state
+        dispatch({ type: ACTIONS.SYNC_FROM_FIREBASE, payload: syncedState });
+      } catch (error) {
+        console.error('Error syncing state from Firebase:', error);
+      } finally {
+        // Reset flag after a short delay to allow state to settle
+        setTimeout(() => {
+          isSyncingFromFirebase.current = false;
+        }, 100);
+      }
+    }, (error) => {
+      console.error('Firebase listener error:', error);
+    });
+    
+    return () => {
+      off(sessionRef);
+    };
+  }, [sessionId, isSessionMode, userRole, isConnected]);
+  
+  // Firebase writer for commissioner (write updates)
+  useEffect(() => {
+    // Only write if:
+    // - In session mode
+    // - User is commissioner
+    // - Not currently syncing from Firebase (prevent loops)
+    // - Firebase is configured
+    // - Not first render
+    if (!isSessionMode || userRole !== 'commissioner' || isSyncingFromFirebase.current || !isConnected) {
+      return;
+    }
+    
+    // Don't write initial load (only write on changes)
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    
+    // Don't write if we haven't loaded initial state yet
+    if (!hasLoadedInitialState.current) {
+      return;
+    }
+    
+    const sessionRef = ref(database, `sessions/${sessionId}/draftState`);
+    
+    // Prepare state for Firebase (exclude movies array)
+    const { movies, ...stateToSync } = state;
+    
+    // Set flag to prevent Firebase listener from updating local state
+    isWritingToFirebase.current = true;
+    
+    set(sessionRef, stateToSync)
+      .then(() => {
+        // Reset flag after write completes
+        setTimeout(() => {
+          isWritingToFirebase.current = false;
+        }, 100);
+      })
+      .catch((error) => {
+        console.error('Error writing state to Firebase:', error);
+        isWritingToFirebase.current = false;
+      });
+  }, [state, sessionId, isSessionMode, userRole, isConnected]);
+  
+  // Save to localStorage on every state change (only if not in session mode)
+  useEffect(() => {
+    // Only save to localStorage if not in session mode
+    // Firebase writes are handled by separate useEffect
+    if (!isSessionMode) {
+      saveState(state, sessionId, userRole, isSessionMode);
+    }
+  }, [state, isSessionMode, sessionId, userRole]);
   
   // Action creators
   const updateMemberName = useCallback((memberId, name) => {
@@ -505,7 +706,7 @@ export function useDraftState() {
     return CATEGORIES.filter(cat => !memberPicks[cat.id]);
   }, [state.picks]);
   
-  const canUndo = state.history.length > 0;
+  const canUndo = state.history && state.history.length > 0;
   
   return {
     // State

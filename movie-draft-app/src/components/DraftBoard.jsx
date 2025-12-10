@@ -1,10 +1,15 @@
 import { useState, useEffect, useMemo } from 'react';
 import { CATEGORIES } from '../data/constants';
+import { useSessionContext } from '../context/SessionContext';
 import MovieCard from './MovieCard';
 import Timer from './Timer';
 import PickerStats from './PickerStats';
 
 export default function DraftBoard({ draftState, timer }) {
+  const { userRole } = useSessionContext();
+  const isViewer = userRole === 'viewer';
+  const isCommissioner = userRole === 'commissioner';
+  const isSessionMode = userRole !== null; // Has a role = in a session
   const {
     members,
     currentMember,
@@ -114,6 +119,11 @@ export default function DraftBoard({ draftState, timer }) {
   }, [currentPickIndex, currentMember, draftOrder, members, selectedCategoryId]);
 
   const handlePick = () => {
+    // Prevent picks for viewers
+    if (isViewer) {
+      return;
+    }
+    
     if (!selectedMovieId) {
       alert('Please select a movie first');
       return;
@@ -147,7 +157,10 @@ export default function DraftBoard({ draftState, timer }) {
           </p>
           <button
             onClick={resetDraft}
-            className="bg-burgundy hover:bg-burgundy-light text-white font-medium py-3 px-8 transition-colors"
+            disabled={isViewer}
+            className={`bg-burgundy hover:bg-burgundy-light text-white font-medium py-3 px-8 transition-colors ${
+              isViewer ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
           >
             Start New Draft
           </button>
@@ -159,6 +172,23 @@ export default function DraftBoard({ draftState, timer }) {
 
   return (
     <div className="space-y-3">
+      {/* View Only Notice for Viewers */}
+      {isViewer && (
+        <div className="bg-cream-dark border-l-4 border-text-muted px-6 py-4 mb-4 rounded-r-lg shadow-sm">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">👁️</span>
+            <div className="flex-1">
+              <h3 className="text-text-primary font-semibold text-sm mb-1">
+                View Only Mode
+              </h3>
+              <p className="text-text-muted text-xs">
+                You are watching the draft. Only the commissioner can make picks. Updates will appear automatically.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Combined Control Bar */}
       <div className="bg-white border border-border p-3">
         {/* Row 1: Upcoming Picks */}
@@ -209,8 +239,12 @@ export default function DraftBoard({ draftState, timer }) {
                 console.log(`[DraftBoard] Manual category selection: ${e.target.value}`);
                 setSelectedCategory(Number(e.target.value));
               }}
-              className="w-full bg-white border border-border px-2 py-1.5 text-text-primary text-sm focus:outline-none focus:border-burgundy"
-              disabled={!currentMember || availableCategories.length === 0}
+              disabled={isViewer || !currentMember || availableCategories.length === 0}
+              className={`w-full border border-border px-2 py-1.5 text-text-primary text-sm focus:outline-none focus:border-burgundy ${
+                isViewer 
+                  ? 'opacity-50 cursor-not-allowed bg-cream' 
+                  : 'bg-white'
+              }`}
             >
               <option value="">Choose...</option>
               {availableCategories.map(category => (
@@ -231,7 +265,12 @@ export default function DraftBoard({ draftState, timer }) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by title..."
-              className="w-full bg-white border border-border px-2 py-1.5 text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-burgundy"
+              disabled={isViewer}
+              className={`w-full border border-border px-2 py-1.5 text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-burgundy ${
+                isViewer 
+                  ? 'opacity-50 cursor-not-allowed bg-cream' 
+                  : 'bg-white'
+              }`}
             />
           </div>
 
@@ -274,21 +313,28 @@ export default function DraftBoard({ draftState, timer }) {
           <div className="flex items-center gap-2 flex-shrink-0">
             <button
               onClick={handlePick}
-              disabled={!selectedMovieId || !selectedCategoryId}
-              className="bg-burgundy hover:bg-burgundy-light disabled:bg-border disabled:text-text-muted disabled:cursor-not-allowed text-white font-medium py-2 px-5 text-sm transition-colors whitespace-nowrap"
+              disabled={!selectedMovieId || !selectedCategoryId || isViewer}
+              className={`bg-burgundy hover:bg-burgundy-light disabled:bg-border disabled:text-text-muted disabled:cursor-not-allowed text-white font-medium py-2 px-5 text-sm transition-colors whitespace-nowrap ${
+                isViewer ? 'opacity-50' : ''
+              }`}
             >
-              Confirm Selection
+              {isViewer ? 'View Only' : 'Confirm Selection'}
             </button>
             <button
               onClick={handleUndo}
-              disabled={!canUndo}
-              className="border border-border bg-white text-text-secondary py-2 px-3 text-xs font-medium hover:bg-cream-dark disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              disabled={!canUndo || isViewer}
+              className={`border border-border bg-white text-text-secondary py-2 px-3 text-xs font-medium hover:bg-cream-dark disabled:opacity-40 disabled:cursor-not-allowed transition-colors ${
+                isViewer ? 'opacity-50' : ''
+              }`}
             >
               Undo
             </button>
             <button
               onClick={resetDraft}
-              className="border border-burgundy/30 bg-burgundy/5 text-burgundy py-2 px-3 text-xs font-medium hover:bg-burgundy/10 transition-colors"
+              disabled={isViewer}
+              className={`border border-burgundy/30 bg-burgundy/5 text-burgundy py-2 px-3 text-xs font-medium hover:bg-burgundy/10 transition-colors ${
+                isViewer ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
             >
               Reset
             </button>
@@ -317,7 +363,7 @@ export default function DraftBoard({ draftState, timer }) {
               key={movie.id}
               movie={movie}
               isSelected={selectedMovieId === movie.id}
-              onClick={() => setSelectedMovieId(movie.id)}
+              onClick={isViewer ? undefined : () => setSelectedMovieId(movie.id)}
               size="normal"
             />
           ))}

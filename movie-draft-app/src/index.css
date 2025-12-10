@@ -24,6 +24,7 @@
   --color-gold: #C9A227;
   --color-gold-light: #D4B23A;
   --color-forest: #2D5A3D;
+  --color-forest-dark: #1F3E2A;
   --color-border: #E5E2DC;
   --color-border-dark: #D4D0C8;
   
@@ -52,9 +53,27 @@ html {
   font-family: var(--font-display);
 }
 
-/* Sharp corners - no border radius anywhere */
+/* Sharp corners - no border radius by default */
 * {
-  border-radius: 0 !important;
+  border-radius: 0;
+}
+
+/* Override: Allow rounded corners for UI polish elements */
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+.rounded-r-lg {
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
 }
 
 /* Smooth transitions on interactive elements */
