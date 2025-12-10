@@ -17,7 +17,25 @@ export function generateDraftCSV(draftState) {
   lines.push(`Members,${csvCell(members.map(m => m.name).join(', '))}`);
   lines.push('');
 
-  // Picks by draft order (Option A)
+  // Matrix format (Categories as rows, Members as columns)
+  lines.push('MATRIX (BY CATEGORY AND MEMBER)');
+  const header = ['Category', ...members.map(m => csvCell(m.name))];
+  lines.push(header.join(','));
+  categories.forEach(category => {
+    const row = [csvCell(category.name)];
+    members.forEach(member => {
+      const memberPicks = picks[member.id] || {};
+      const movieId = memberPicks[category.id];
+      const movie = movies.find(m => m.id === movieId);
+      row.push(csvCell(movie ? movie.title : ''));
+    });
+    lines.push(row.join(','));
+  });
+
+  // Blank row
+  lines.push('');
+
+  // Picks by draft order
   lines.push('PICKS BY DRAFT ORDER');
   lines.push('Pick #,Round,Member,Category,Movie Title,Movie Year');
   const totalMembers = members.length || 6;
@@ -34,24 +52,6 @@ export function generateDraftCSV(draftState) {
       csvCell(movie?.title || ''),
       movie?.year || ''
     ].join(','));
-  });
-
-  // Blank row
-  lines.push('');
-
-  // Matrix format (Option B)
-  lines.push('MATRIX (BY MEMBER AND CATEGORY)');
-  const header = ['Member', ...categories.map(c => c.name)];
-  lines.push(header.map(csvCell).join(','));
-  members.forEach(member => {
-    const row = [csvCell(member.name)];
-    const memberPicks = picks[member.id] || {};
-    categories.forEach(category => {
-      const movieId = memberPicks[category.id];
-      const movie = movies.find(m => m.id === movieId);
-      row.push(csvCell(movie ? movie.title : ''));
-    });
-    lines.push(row.join(','));
   });
 
   return lines.join('\n');
