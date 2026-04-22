@@ -1,0 +1,1402 @@
+[
+  {
+    "title": "Le Samourai",
+    "picker": "member_a",
+    "datePicked": "2024-01-05",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "In A Lonely Place",
+    "picker": "member_b",
+    "datePicked": "2024-01-16",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Harakiri",
+    "picker": "member_c",
+    "datePicked": "2024-01-27",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Jojo Rabbit",
+    "picker": "member_d",
+    "datePicked": "2024-02-07",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Starman",
+    "picker": "member_e",
+    "datePicked": "2024-02-18",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Boomerang",
+    "picker": "member_f",
+    "datePicked": "2024-02-29",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Local Hero",
+    "picker": "member_a",
+    "datePicked": "2024-03-11",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Sexy Beast",
+    "picker": "member_b",
+    "datePicked": "2024-03-22",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Zombieland",
+    "picker": "member_c",
+    "datePicked": null,
+    "yesCount": 2,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Something Wild",
+    "picker": "member_d",
+    "datePicked": "2024-04-13",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Pain and Glory",
+    "picker": "member_e",
+    "datePicked": "2024-04-24",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "McCabe & Mrs. Miller",
+    "picker": "member_f",
+    "datePicked": "2024-05-05",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "After Hours",
+    "picker": "member_a",
+    "datePicked": "2024-05-16",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Amos & Andrew",
+    "picker": "member_b",
+    "datePicked": "2024-05-27",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Lives of Others",
+    "picker": "member_c",
+    "datePicked": "2024-06-07",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Queen & Slim",
+    "picker": "member_d",
+    "datePicked": "2024-06-18",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Josie and the Pussycats",
+    "picker": "member_e",
+    "datePicked": "2024-06-29",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Mother!",
+    "picker": "member_f",
+    "datePicked": null,
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Trial of the Chicago 7",
+    "picker": "member_a",
+    "datePicked": "2024-07-21",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The Last Detail",
+    "picker": "member_b",
+    "datePicked": "2024-08-01",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The American",
+    "picker": "member_c",
+    "datePicked": "2024-08-12",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Memories of Murder",
+    "picker": "member_d",
+    "datePicked": "2024-08-23",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Sweet Smell of Success",
+    "picker": "member_e",
+    "datePicked": "2024-09-03",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "First Cow",
+    "picker": "member_f",
+    "datePicked": "2024-09-14",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Lavender Hill Mob",
+    "picker": "member_a",
+    "datePicked": "2024-09-25",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Mangrove",
+    "picker": "member_b",
+    "datePicked": "2024-10-06",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Repulsion",
+    "picker": "member_c",
+    "datePicked": null,
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "A Touch of Sin",
+    "picker": "member_d",
+    "datePicked": "2024-10-28",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "40 Year Old Version",
+    "picker": "member_e",
+    "datePicked": "2024-11-08",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Million Dollar Baby",
+    "picker": "member_f",
+    "datePicked": "2024-11-19",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Sense and Sensibility",
+    "picker": "member_a",
+    "datePicked": "2024-11-30",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Judas and the Black Messiah",
+    "picker": "member_b",
+    "datePicked": "2024-12-11",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Justin Timberlake + the Tennessee Kids",
+    "picker": "member_c",
+    "datePicked": "2024-12-22",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Malcolm X",
+    "picker": "member_d",
+    "datePicked": "2025-01-02",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Another Round",
+    "picker": "member_e",
+    "datePicked": "2025-01-13",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Network",
+    "picker": "member_f",
+    "datePicked": null,
+    "yesCount": 1,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Love & Basketball",
+    "picker": "member_a",
+    "datePicked": "2025-02-04",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Chungking Express",
+    "picker": "member_b",
+    "datePicked": "2025-02-15",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The Imaginarium of Doctor Parnassus",
+    "picker": "member_c",
+    "datePicked": "2025-02-26",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Days of Heaven",
+    "picker": "member_d",
+    "datePicked": "2025-03-09",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "French Connection",
+    "picker": "member_e",
+    "datePicked": "2025-03-20",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The Hit",
+    "picker": "member_f",
+    "datePicked": "2025-03-31",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "To Live and Die in LA",
+    "picker": "member_a",
+    "datePicked": "2025-04-11",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Night Moves",
+    "picker": "member_b",
+    "datePicked": "2025-04-22",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "State of Grace",
+    "picker": "member_c",
+    "datePicked": null,
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "High and Low",
+    "picker": "member_d",
+    "datePicked": "2025-05-14",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The Long Good Friday",
+    "picker": "member_e",
+    "datePicked": "2025-05-25",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Down by Law",
+    "picker": "member_f",
+    "datePicked": "2025-06-05",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "They Live",
+    "picker": "member_a",
+    "datePicked": "2025-06-16",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Let the Sunshine In",
+    "picker": "member_b",
+    "datePicked": "2025-06-27",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Ghost in the Shell",
+    "picker": "member_c",
+    "datePicked": "2025-07-08",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Velvet Underground",
+    "picker": "member_d",
+    "datePicked": "2025-07-19",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Night Shift",
+    "picker": "member_e",
+    "datePicked": "2025-07-30",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "In the Heat of the Night",
+    "picker": "member_f",
+    "datePicked": null,
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Jungle Fever",
+    "picker": "member_a",
+    "datePicked": "2025-08-21",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The Last Picture Show",
+    "picker": "member_b",
+    "datePicked": "2025-09-01",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Broadcast News",
+    "picker": "member_c",
+    "datePicked": "2025-09-12",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Thomas Crown Affair",
+    "picker": "member_d",
+    "datePicked": "2025-09-23",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Red Rock West",
+    "picker": "member_e",
+    "datePicked": "2025-10-04",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Buffalo Bill and the Indians",
+    "picker": "member_f",
+    "datePicked": "2025-10-15",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Bob Roberts",
+    "picker": "member_a",
+    "datePicked": "2025-10-26",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Fabulous Baker Boys",
+    "picker": "member_b",
+    "datePicked": "2025-11-06",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "My Dinner with Andre",
+    "picker": "member_c",
+    "datePicked": null,
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Blue Collar",
+    "picker": "member_d",
+    "datePicked": "2025-11-28",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Don't Look Now",
+    "picker": "member_e",
+    "datePicked": "2025-12-09",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Tree of Life",
+    "picker": "member_f",
+    "datePicked": "2025-12-20",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Triangle of Sadness",
+    "picker": "member_a",
+    "datePicked": "2025-12-31",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Murder on the Orient Express",
+    "picker": "member_b",
+    "datePicked": "2026-01-11",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Munich",
+    "picker": "member_c",
+    "datePicked": "2026-01-22",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Moonlight",
+    "picker": "member_d",
+    "datePicked": "2026-02-02",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Conformist",
+    "picker": "member_e",
+    "datePicked": "2026-02-13",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Roma",
+    "picker": "member_f",
+    "datePicked": null,
+    "yesCount": 2,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Tampopo",
+    "picker": "member_a",
+    "datePicked": "2026-03-07",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Beau is Afraid",
+    "picker": "member_b",
+    "datePicked": "2026-03-18",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Pretty Baby",
+    "picker": "member_c",
+    "datePicked": "2026-03-29",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Carnal Knowledge",
+    "picker": "member_d",
+    "datePicked": "2026-04-09",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "The Straight Story",
+    "picker": "member_e",
+    "datePicked": "2026-04-20",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Withnail and I",
+    "picker": "member_f",
+    "datePicked": "2026-05-01",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Heartbreak Kid",
+    "picker": "member_a",
+    "datePicked": "2026-05-12",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Killers of the Flower Moon",
+    "picker": "member_b",
+    "datePicked": "2026-05-23",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Babylon",
+    "picker": "member_c",
+    "datePicked": null,
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Boy and the Heron",
+    "picker": "member_d",
+    "datePicked": "2026-06-14",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "In the Loop",
+    "picker": "member_e",
+    "datePicked": "2026-06-25",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Shampoo",
+    "picker": "member_f",
+    "datePicked": "2026-07-06",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Drive Away Dolls",
+    "picker": "member_a",
+    "datePicked": "2026-07-17",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Secret in Their Eyes",
+    "picker": "member_b",
+    "datePicked": "2026-07-28",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Do Not Expect Too Much From the End of the World",
+    "picker": "member_c",
+    "datePicked": "2026-08-08",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "The Favourite",
+    "picker": "member_d",
+    "datePicked": "2026-08-19",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "True Stories",
+    "picker": "member_e",
+    "datePicked": "2026-08-30",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Heat",
+    "picker": "member_f",
+    "datePicked": null,
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Marie Antoinette",
+    "picker": "member_a",
+    "datePicked": "2026-09-21",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Kneecap",
+    "picker": "member_b",
+    "datePicked": "2026-10-02",
+    "yesCount": 1,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Mulholland Drive",
+    "picker": "member_c",
+    "datePicked": "2026-10-13",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Mishima: A Life in Four Chapters",
+    "picker": "member_d",
+    "datePicked": "2026-10-24",
+    "yesCount": 3,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Still Walking",
+    "picker": "member_e",
+    "datePicked": "2026-11-04",
+    "yesCount": 4,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Silence",
+    "picker": "member_f",
+    "datePicked": "2026-11-15",
+    "yesCount": 5,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Near Dark",
+    "picker": "member_a",
+    "datePicked": "2026-11-26",
+    "yesCount": 6,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "yes",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "yes",
+      "member_f": "yes"
+    }
+  },
+  {
+    "title": "Oldboy",
+    "picker": "member_b",
+    "datePicked": "2026-12-07",
+    "yesCount": 0,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "One Battle After Another",
+    "picker": "member_c",
+    "datePicked": null,
+    "yesCount": 1,
+    "votes": {
+      "member_a": "yes",
+      "member_b": "no",
+      "member_c": "no",
+      "member_d": "no",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  },
+  {
+    "title": "Cloud Atlas",
+    "picker": "member_d",
+    "datePicked": "2026-12-29",
+    "yesCount": 2,
+    "votes": {
+      "member_a": "no",
+      "member_b": "no",
+      "member_c": "yes",
+      "member_d": "yes",
+      "member_e": "no",
+      "member_f": "no"
+    }
+  }
+]
